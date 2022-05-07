@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+
+<div class="main-wrap">
+  <div class="cover_1 cover_sm">
+    <div class="img_bg" style="background-image: url({% static 'img/slider-1.jpg' %})"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7" data-aos="fade-up">
+            <h2 class="heading">Contact Us</h2>
+            <p class="lead">You can contact us through email. Submit this contact form, we will get your email and our admin will contact with you as soon as possible!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .cover_1 -->
+
+  <div class="section" data-aos="fade-up">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-8  text-center">
+          <h2 class="mb-3">Contact Form</h2>
+          <p class="lead">Please fill up the form correctly. An admin will get back to you and you will be contacted.</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-10 p-5 form-wrap">
+          <form action="" method="POST">
+
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            {% endbuttons %}
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .section -->
+
+</div> <!-- .main-wrap -->
+
+{% endblock %}
